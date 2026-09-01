@@ -2,6 +2,8 @@
 
 一个单文件静态信息页，覆盖公告、日程、文件、链接、班委、班费六个板块。80 人班级完全够用，部署成本为 0，不需要服务器。
 
+线上地址：<https://guobawaine-ctrl.github.io/class-info/>
+
 ## 怎么改内容
 
 直接打开 `index.html` 编辑：
@@ -34,7 +36,7 @@
 1. 注册并登录 GitHub，新建一个公开仓库，例如 `class-info`。
 2. 把 `index.html`（README 可选）上传到仓库。
 3. 打开仓库 Settings → Pages，Source 选择 `main` 分支，目录选 `/ (root)`。
-4. 等一两分钟，访问 `https://你的用户名.github.io/class-info/`。
+4. 等一两分钟，访问 `https://guobawaine-ctrl.github.io/class-info/`。
 
 想要更短的网址可以买域名（约 30–80 元/年），非必需。
 
