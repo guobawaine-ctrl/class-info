@@ -175,6 +175,31 @@ main{max-width:1080px;margin:22px auto 60px;padding:0 20px}
   font-size:11px;
   font-weight:600;
 }
+.week-card{padding:18px;margin-bottom:12px}
+.week-head{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:10px;
+  margin-bottom:14px;
+  padding-bottom:10px;
+  border-bottom:1px solid var(--line);
+}
+.week-head h3{margin:0;font-size:16px}
+.day-group{display:grid;gap:8px;margin-bottom:14px}
+.day-title{margin:0 0 2px;font-size:13px;color:var(--teal);font-weight:700}
+.evt{display:flex;gap:12px;align-items:flex-start}
+.evt .time{
+  flex:none;
+  width:74px;
+  font-size:12px;
+  font-weight:700;
+  color:var(--muted);
+  padding-top:1px;
+}
+.evt p{margin:0;font-size:14px}
+.evt b{display:block;font-weight:700}
+.evt small{display:block;color:var(--muted);font-size:12px}
 
 .file-grid,.link-grid,.role-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .file{display:flex;flex-direction:column;gap:10px;transition:border-color .15s,transform .15s}
@@ -226,6 +251,8 @@ footer p{margin:2px 0}
   .file-grid,.link-grid,.role-grid{grid-template-columns:1fr}
   .event{flex-direction:column}
   .event-date{width:auto;display:flex;align-items:baseline;gap:6px;justify-content:center}
+  .evt{flex-direction:column;gap:2px}
+  .evt .time{width:auto}
   .brand h1{font-size:17px}
   .top-actions .btn{padding:8px 10px}
 }
@@ -248,7 +275,6 @@ footer p{margin:2px 0}
       </div>
     </div>
     <div class="top-actions">
-      <a class="btn" href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/></svg>班群</a>
       <a class="btn" href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg>共享文档</a>
       <a class="btn" href="#"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect width="8" height="4" x="8" y="2" rx="1" ry="1"/><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"/><path d="M12 11h4"/><path d="M12 16h4"/><path d="M8 11h.01"/><path d="M8 16h.01"/></svg>意见箱</a>
     </div>
@@ -276,7 +302,7 @@ footer p{margin:2px 0}
           <time>2026-09-01</time>
         </div>
         <h3>入学信息速查（持续更新）</h3>
-        <p>报到安排、军训日程、选课时间与校园生活指南，统一整理到「文件」板块；重要通知仍以班级群为准。</p>
+        <p>报到安排、军训日程、选课时间与校园生活指南，统一整理到「文件」板块；重要通知会在公告栏同步留档。</p>
       </article>
       <article class="card announce">
         <div class="announce-top"><time>2026-09-01</time></div>
@@ -286,7 +312,7 @@ footer p{margin:2px 0}
       <article class="card announce">
         <div class="announce-top"><time>待定</time></div>
         <h3>第一次班级活动</h3>
-        <p>破冰活动形式待定：想约球、拍照或写字的同学可以先在班群冒泡。</p>
+        <p>破冰活动形式待定：想约球、拍照或写字的同学可以先来找我。</p>
       </article>
     </div>
   </section>
@@ -296,33 +322,67 @@ footer p{margin:2px 0}
       <h2>日程</h2>
       <span class="pill today">今天</span>
     </div>
-    <div class="week-row">
-      <div class="day">周一<b>—</b></div>
-      <div class="day">周二<b>—</b></div>
-      <div class="day">周三<b>—</b></div>
-      <div class="day">周四<b>—</b></div>
-      <div class="day">周五<b>—</b></div>
-      <div class="day">周六<b>—</b></div>
-      <div class="day">周日<b>—</b></div>
-    </div>
-    <div class="event-list">
-      <article class="card event">
-        <div class="event-date"><b>09</b><span>07 周一</span></div>
-        <div class="event-body">
-          <h3>新学期开始</h3>
-          <p>正式课表与考试安排确定后同步到这里。</p>
-          <span class="tag">待确认</span>
-        </div>
-      </article>
-      <article class="card event">
-        <div class="event-date"><b>09</b><span>14 周一</span></div>
-        <div class="event-body">
-          <h3>选课系统开放</h3>
-          <p>选课时间、操作入口与常见问题会整理到「文件」板块。</p>
-          <span class="tag">待确认</span>
-        </div>
-      </article>
-    </div>
+    <article class="card week-card">
+      <div class="week-head">
+        <h3>第 0 周</h3>
+        <span class="tag">8.31-9.6</span>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">8/31 周一</h4>
+        <div class="evt"><span class="time">8:30-9:30</span><p><b>第一次班会</b><small>H3204</small></p></div>
+        <div class="evt"><span class="time">10:00-11:00</span><p><b>选课指导、培养方案解读</b><small>H3409</small></p></div>
+        <div class="evt"><span class="time">11:00-11:30</span><p><b>图书馆系统讲解</b><small>H3409</small></p></div>
+        <div class="evt"><span class="time">13:00-14:30</span><p><b>英语分级考试</b><small>邯郸校区线下</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/1-9/3</h4>
+        <div class="evt"><span class="time">10:00 起</span><p><b>第一轮选课</b><small>9 月 1 日 10:00 至 9 月 3 日 10:00 · 可到四教 5 楼机房</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/2 周三</h4>
+        <div class="evt"><span class="time">9:30-11:00</span><p><b>第二次班会 · 选班委</b><small>地点待定</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/3 周四</h4>
+        <div class="evt"><span class="time">8:30-16:30</span><p><b>选购教材 I</b></p></div>
+        <div class="evt"><span class="time">18:30-21:30</span><p><b>腾飞书院先导考试</b><small>超星平台</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/4-9/6</h4>
+        <div class="evt"><span class="time">13:00 起</span><p><b>第二轮选课</b><small>9 月 4 日 13:00 至 9 月 6 日 10:00</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/5 周六</h4>
+        <div class="evt"><span class="time">8:30-16:30</span><p><b>选购教材 II</b></p></div>
+        <div class="evt"><span class="time">9:00-11:00</span><p><b>学院开学典礼</b><small>正大体育馆</small></p></div>
+        <div class="evt"><span class="time">14:30-16:00</span><p><b>本科新生校史校情教育</b><small>校史馆</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/6 周日</h4>
+        <div class="evt"><span class="time">8:00-8:45</span><p><b>学校开学典礼</b><small>时间暂定 · 光华楼前广场及草坪</small></p></div>
+        <div class="evt"><span class="time">8:30-16:30</span><p><b>选购教材 III</b></p></div>
+      </div>
+    </article>
+    <article class="card week-card">
+      <div class="week-head">
+        <h3>第一周</h3>
+        <span class="tag">9.7-9.13</span>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/7 周一</h4>
+        <div class="evt"><span class="time">全天</span><p><b>正式上课</b></p></div>
+        <div class="evt"><span class="time">13:00 起</span><p><b>第三轮选课</b><small>9 月 7 日 13:00 至 9 月 21 日 10:00</small></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/8 周二</h4>
+        <div class="evt"><span class="time">13:30-15:10</span><p><b>智能机器人与先进制造大讲堂</b><small>主讲人苏昊 · 美国研究中心报告厅</small></p></div>
+        <div class="evt"><span class="time">15:30 起</span><p><b>分省市招生组新生座谈会</b></p></div>
+      </div>
+      <div class="day-group">
+        <h4 class="day-title">9/12 周六</h4>
+        <div class="evt"><span class="time">9:25-10:30</span><p><b>本科生新生入学体检</b><small>校医院</small></p></div>
+      </div>
+    </article>
   </section>
 
   <section id="panel-files" class="panel" role="tabpanel" aria-label="文件">
@@ -331,6 +391,24 @@ footer p{margin:2px 0}
       <span class="pill">常用资料集中放</span>
     </div>
     <div class="file-grid">
+      <a class="card file" href="#">
+        <span class="file-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M8 2v4"/><path d="M16 2v4"/><rect width="18" height="18" x="3" y="4" rx="2"/><path d="M3 10h18"/></svg></span>
+        <span class="file-name">2026-2027 校历</span>
+        <span class="file-desc">学期安排与节假日（PDF）</span>
+        <span class="tag">待上传</span>
+      </a>
+      <a class="card file" href="#">
+        <span class="file-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+        <span class="file-name">培养方案 · 智能机器人与先进制造创新学院</span>
+        <span class="file-desc">专业培养方案（Word）</span>
+        <span class="tag">待上传</span>
+      </a>
+      <a class="card file" href="#">
+        <span class="file-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
+        <span class="file-name">2026 级公共方案</span>
+        <span class="file-desc">公共课程方案（Word）</span>
+        <span class="tag">待上传</span>
+      </a>
       <a class="card file" href="#">
         <span class="file-icon"><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 9H8"/><path d="M16 13H8"/><path d="M16 17H8"/></svg></span>
         <span class="file-name">入学信息速查表</span>
@@ -364,12 +442,12 @@ footer p{margin:2px 0}
       <span class="pill">常用入口</span>
     </div>
     <div class="link-grid">
-      <a class="card link" href="#"><span><b>复旦教务系统</b><small>选课、成绩、学籍</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a class="card link" href="#"><span><b>复旦邮箱</b><small>校园邮箱入口</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a class="card link" href="#"><span><b>图书馆</b><small>馆藏与座位预约</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a class="card link" href="#"><span><b>校历</b><small>学期与节假日安排</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a class="card link" href="#"><span><b>校园卡服务</b><small>充值、挂失、流水</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
-      <a class="card link" href="#"><span><b>班群</b><small>日常通知与讨论</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="https://ehall.fudan.edu.cn/jxmh"><span><b>复旦教务系统</b><small>教学门户与教务服务</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="https://ehall.fudan.edu.cn"><span><b>复小搜</b><small>校园智能搜索与办事入口</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="https://mail.fudan.edu.cn"><span><b>复旦邮箱</b><small>校园邮箱入口</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="https://library.fudan.edu.cn"><span><b>图书馆</b><small>馆藏检索与借阅</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="https://libsrs.fudan.edu.cn/h5/"><span><b>图书馆座位预约</b><small>选座与预约管理</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
+      <a class="card link" href="#"><span><b>校历（PDF）</b><small>2026-2027 学期安排（待上传）</small></span><svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg></a>
     </div>
   </section>
 
